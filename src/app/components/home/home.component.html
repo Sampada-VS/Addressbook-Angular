@@ -1,0 +1,38 @@
+<div>
+<app-header></app-header>
+<div class="main-content">
+    <div class="home-header-content">
+      <div class="person-detail-text">
+        Person Details<div class="person-count">{{addressBookArray.length}}</div>
+      </div>
+      <a routerLink="../form" class="add-button">
+        <img src="../assets/icons/add-24px.svg" alt="Add person">Add Person
+      </a>
+    </div>
+    <div class="table-main" >
+      <table id="table-display" class="table">
+          <tr>
+            <th>Full Name</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip Code</th>
+            <th>Phone Number</th>
+            <th>Actions</th>
+          </tr>
+          <tr *ngFor="let element of addressBookArray">
+            <td>{{element.name}}</td>
+            <td>{{element.address}}</td>
+            <td>{{element.city}}</td>
+            <td>{{element.state}}</td>
+            <td>{{element.zip}}</td>
+            <td>{{element.phoneNumber}}</td>
+            <td>
+                <img (click)="remove(element.addressBookId)" src="../../../assets/icons/delete-black-18dp.svg" alt="delete">
+                <img (click)="update(element.addressBookId)" src="../../../assets/icons/create-black-18dp.svg" alt="update">
+            </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
